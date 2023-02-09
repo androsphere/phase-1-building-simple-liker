@@ -13,7 +13,13 @@ function like(e) {
   const heart = e.target;
   mimicServerCall()
     .then(() => {
-      heart.innerText = FULL_HEART;
+      if (heart.innerText === FULL_HEART)
+      {
+        heart.innerText = EMPTY_HEART;
+      }
+      else {
+        heart.innerText = FULL_HEART;
+      }
     })
     .catch(() => {
       document.getElementById("modal").classList.toggle("hidden");
